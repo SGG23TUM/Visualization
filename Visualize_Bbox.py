@@ -4,11 +4,11 @@ import json
 def draw_bounding_boxes_and_labels(image_path, json_data):
     with Image.open(image_path) as img:
         draw = ImageDraw.Draw(img)
-        font = ImageFont.truetype("arial.ttf", 30)  # Font boyutunu ayarlayabilirsiniz
+        font = ImageFont.truetype("arial.ttf", 30)  
 
         for image_info in json_data:
             for obj in image_info['objects']:
-                # Bounding box'ın sol üst ve sağ alt noktalarını hesapla
+                
                 left, top, right, bottom = obj['x'], obj['y'], obj['x'] + obj['w'], obj['y'] + obj['h']
 
                 
